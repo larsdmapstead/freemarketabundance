@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "freemarketabundance",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash",
+    "run_worker_first": ["/api/*"]
+  }
+  // To make signups live, create a KV namespace and uncomment:
+  //   npx wrangler kv namespace create SIGNUPS
+  // then paste the id it prints here.
+  //
+  // ,"kv_namespaces": [
+  //   { "binding": "SIGNUPS", "id": "PASTE_ID_HERE" }
+  // ]
+}

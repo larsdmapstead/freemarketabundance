@@ -3,7 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>The 2040 Program: Abundance is produced</title>
+<title>Free Market Abundance | The 2040 Program</title>
+<meta name="description" content="The 2040 Program: a home you can afford, a doctor the same day with the price on the door, power too cheap to think about, a class size of one for every kid. Free-market capitalism plus AI, robots and cheap energy build it. Ten points. Every number has a receipt.">
+<link rel="canonical" href="https://freemarketabundance.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Abundance is produced. The 2040 Program">
+<meta property="og:description" content="A home you can afford. A doctor the same day. Power too cheap to think about. Free people build it. Sign the 2040 Program.">
+<meta property="og:url" content="https://freemarketabundance.com/">
+<meta property="og:site_name" content="Free Market Abundance">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2310283A'/%3E%3Ccircle cx='32' cy='44' r='18' fill='%23F3C33C'/%3E%3Crect y='44' width='64' height='20' fill='%2310283A'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap" rel="stylesheet">
@@ -19,6 +28,8 @@
 --field:#1F7A66;
 --line:#D5DCE1;
 --focus:#1F7A66;
+--navy:#10283A;
+--cream:#FBFAF4;
 box-sizing:border-box;
 padding-top:env(safe-area-inset-top,0px);
 padding-bottom:env(safe-area-inset-bottom,0px);
@@ -52,34 +63,62 @@ img{max-width:100%}
 .wrap{max-width:72rem;margin:0 auto;padding:0 1.25rem}
 .prose{max-width:38rem}
 :focus-visible{outline:3px solid var(--focus);outline-offset:3px}
-.nav{
-position:sticky;top:env(safe-area-inset-top,0px);z-index:9;
-background:var(--paper);border-bottom:1px solid var(--line);
-}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--paper);border-bottom:1px solid var(--line)}
 .nav .wrap{display:flex;align-items:center;gap:1.25rem;height:3.6rem}
-.wordmark{font-weight:900;font-stretch:112%;font-size:1rem;text-decoration:none;white-space:nowrap}
+.wordmark{font-weight:900;font-stretch:112%;font-size:1rem;text-decoration:none;white-space:nowrap;letter-spacing:.01em}
 .wordmark span{color:var(--sun-deep)}
-.nav ul{list-style:none;margin:0 0 0 auto;padding:0;display:flex;gap:1.1rem;overflow-x:auto;scrollbar-width:none}
-.nav ul::-webkit-scrollbar{display:none}
+.nav ul{list-style:none;margin:0 0 0 auto;padding:0;display:flex;gap:1.1rem}
 .nav li a{font-weight:600;font-size:.92rem;text-decoration:none;color:var(--ink-2);white-space:nowrap}
 .nav li a:hover{color:var(--ink)}
 .nav .btn{margin-left:.5rem}
+.menu-btn{display:none;margin-left:auto;background:none;border:2px solid var(--ink);color:var(--ink);font:inherit;font-family:"Archivo",sans-serif;font-weight:800;font-size:.85rem;padding:.4rem .7rem;border-radius:4px;cursor:pointer}
+@media (max-width:56rem){
+.nav .wrap{flex-wrap:wrap;height:auto;min-height:3.6rem;padding-top:.55rem;padding-bottom:.55rem;row-gap:.6rem}
+.menu-btn{display:inline-block}
+.nav .btn{margin-left:0}
+.nav ul{display:none;flex-basis:100%;flex-direction:column;gap:.1rem;margin:0;padding:.25rem 0 .5rem;border-top:1px solid var(--line)}
+.nav.open ul{display:flex}
+.nav li a{display:block;padding:.55rem 0;font-size:1.05rem;color:var(--ink)}
+}
+@media (max-width:26rem){.wordmark{font-size:.8rem}.nav .wrap{gap:.6rem}}
 .btn{
 display:inline-block;background:var(--sun);color:#10283A;border:0;border-radius:4px;
 font-weight:800;font-size:.95rem;padding:.6rem 1rem;text-decoration:none;cursor:pointer;white-space:nowrap;
 }
 .btn:hover{background:var(--sun-deep)}
 .btn.sm{padding:.4rem .7rem;font-size:.85rem}
-.hero{position:relative;overflow:hidden;padding:4rem 0 0}
+.btn.big{font-size:1.1rem;padding:.9rem 1.3rem}
+.btn.dark{background:#10283A;color:var(--sun)}
+.btn.dark:hover{background:#1c3d55}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;padding:3.5rem 0 0}
 .hero .wrap{position:relative;z-index:1}
 .hero h1{
 font-weight:900;font-stretch:115%;
 font-size:clamp(3rem,10vw,8.5rem);line-height:.92;letter-spacing:-0.025em;
 max-width:11ch;margin-bottom:1.5rem;
 }
-.hero .kicker{font-family:"Archivo",sans-serif;font-weight:600;color:var(--ink-2);font-size:1rem;margin-bottom:1.25rem}
-.hero .lede{font-size:clamp(1.2rem,2.2vw,1.45rem);line-height:1.5;max-width:34rem}
+.hero .kicker{font-family:"Archivo",sans-serif;font-weight:700;color:var(--ink-2);font-size:.95rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:1.25rem}
+.hero .lede{font-size:clamp(1.2rem,2.2vw,1.45rem);line-height:1.5;max-width:36rem}
 .hero .lede strong{font-weight:700}
+.hero .lede .big-line{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:110%;font-size:clamp(1.4rem,2.8vw,1.9rem);line-height:1.15;margin:1.25rem 0 1.5rem;text-wrap:balance}
+.hero-cta{margin-top:1.5rem;max-width:36rem}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:2rem 4rem;align-items:start}
+@media (min-width:64rem){.hero-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}.hero .picture{padding-top:.35rem}}
+.pic-h{font-weight:900;font-stretch:112%;font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:.75rem}
+.hero .picture p{font-size:clamp(1.1rem,1.8vw,1.25rem)}
+.hero-cta .ask{font-family:"Archivo",sans-serif;font-weight:800;font-size:1.05rem;margin-bottom:.6rem}
+.inline-form{display:flex;flex-wrap:wrap;gap:.6rem}
+.inline-form input{flex:1 1 14rem;font:inherit;font-size:1.05rem;padding:.8rem .9rem;border:2px solid var(--ink);border-radius:4px;background:#FFFDF5;color:#10283A;min-width:0}
+.inline-form .btn{flex:0 0 auto}
+.hero-cta small{display:block;margin-top:.5rem;font-size:.9rem;color:var(--ink-2)}
+.hero-cta .alt{margin-top:1rem;font-family:"Archivo",sans-serif;font-weight:700;font-size:.95rem}
+.hero-cta .alt a{color:var(--field)}
+.hero .receipt-line{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:110%;font-size:clamp(1.2rem,2.4vw,1.5rem);color:var(--field);margin:2rem 0 0}
 .sunrise{
 position:relative;margin-top:2.5rem;height:9rem;
 background:
@@ -87,48 +126,79 @@ radial-gradient(ellipse 60% 100% at 50% 100%, var(--sun) 0 58%, transparent 60%)
 linear-gradient(to top, var(--sky-deep), var(--sky) 55%, transparent);
 }
 .sunrise::after{content:"";position:absolute;inset:auto 0 0;height:3px;background:var(--ink)}
-.hero .question{
-font-family:"Archivo",sans-serif;font-weight:800;font-stretch:110%;
-font-size:clamp(1.4rem,3vw,2rem);margin:1.5rem 0 0;
-}
+.state{display:none;font-family:"Archivo",sans-serif;font-weight:800;font-size:1.15rem;margin:.75rem 0 0;padding:.9rem 1rem;border-left:4px solid var(--field);background:var(--sky)}
+.state.show{display:block}
+.state.pending{border-left-color:var(--sun-deep)}
+
+/* Sections */
 section{padding:4.5rem 0;border-top:1px solid var(--line)}
-section h2{font-weight:900;font-stretch:112%;font-size:clamp(2rem,5vw,3.6rem);margin-bottom:.5rem}
-.sub{font-size:1.15rem;color:var(--ink-2);margin-bottom:2.25rem;max-width:40rem}
-.promises{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink);max-width:62rem}
-.promises li{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:.4rem 2.5rem;align-items:baseline;padding:1.1rem 0;border-bottom:1px solid var(--line)}
-.promises .p{font-family:"Archivo",sans-serif;font-weight:700;font-size:clamp(1.2rem,2.4vw,1.5rem);line-height:1.2;text-wrap:balance;margin:0}
-.promises .m{margin:0;font-size:1.05rem;color:var(--ink-2)}
+section h2{font-weight:900;font-stretch:112%;font-size:clamp(2rem,5vw,3.6rem);margin-bottom:.5rem;text-wrap:balance}
+.sub{font-size:1.15rem;color:var(--ink-2);margin-bottom:2.25rem;max-width:42rem}
+.h2-next{margin-top:4.5rem}
+
+/* What disappears */
+.gone{list-style:none;margin:0;padding:0;max-width:62rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:1.5rem 2.5rem}
+.gone li{min-width:0;border-top:3px solid var(--ink);padding-top:.8rem}
+.gone s{display:block;font-family:"Archivo",sans-serif;font-weight:900;font-stretch:110%;font-size:clamp(1.35rem,2.6vw,1.75rem);line-height:1.1;color:var(--ink-2);text-decoration:line-through;text-decoration-color:var(--sun-deep);text-decoration-thickness:.07em;margin-bottom:.45rem}
+.gone span{display:block;font-size:1rem;color:var(--ink-2)}
+.gone span b{font-family:"Archivo",sans-serif;font-weight:800;color:var(--field);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;margin-right:.4rem}
+.villain{margin:3rem 0 0;max-width:46rem;background:var(--navy);color:var(--cream);padding:1.5rem 1.6rem}
+.villain h3{color:var(--sun);font-size:clamp(1.4rem,2.8vw,1.9rem);font-weight:900;font-stretch:110%;margin-bottom:.7rem}
+.villain p{margin:0;font-size:1.12rem}
+
+/* Promises */
+.promises{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink);max-width:62rem;counter-reset:pr}
+.promises li{display:grid;grid-template-columns:2.2rem minmax(0,1.1fr) minmax(0,1fr);gap:.35rem 1.5rem;align-items:baseline;padding:1.1rem 0;border-bottom:1px solid var(--line)}
+.promises li::before{counter-increment:pr;content:counter(pr);font-family:"Archivo",sans-serif;font-weight:900;font-size:1.3rem;color:var(--sun-deep);grid-row:1/3}
+.promises .p{font-family:"Archivo",sans-serif;font-weight:700;font-size:clamp(1.2rem,2.4vw,1.5rem);line-height:1.2;text-wrap:balance;margin:0;grid-column:2}
+.promises .m{margin:0;font-size:1.05rem;color:var(--ink-2);grid-column:3}
 .promises .m b{font-family:"Archivo",sans-serif;font-weight:800;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--field);margin-right:.45rem}
-.kept{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:110%;font-size:clamp(1.4rem,3vw,2rem);margin:2rem 0 0;max-width:40rem;text-wrap:balance}
-.case{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr));gap:2.5rem 3.5rem;margin-top:4rem;max-width:62rem}
+.promises .rc{grid-column:3;font-family:"Archivo",sans-serif;font-weight:700;font-size:.85rem;color:var(--field);display:flex;flex-wrap:wrap;gap:.3rem 1rem}
+.promises .rc a{color:var(--field)}
+@media (max-width:52rem){
+.promises li{grid-template-columns:2.2rem 1fr}
+.promises .m,.promises .rc{grid-column:2}
+}
+.kept{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:110%;font-size:clamp(1.4rem,3vw,2rem);margin:2.5rem 0 0;max-width:42rem;text-wrap:balance}
+
+/* What builds it */
+.builds{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:1.5rem 2rem;margin-top:1.5rem;max-width:62rem}
+.builds > div{min-width:0;border-top:3px solid var(--field);padding-top:.9rem}
+.builds h3{font-size:1.25rem;font-weight:900;margin-bottom:.5rem;text-wrap:balance}
+.builds p{margin:0 0 .5rem;font-size:1.02rem}
+.builds .tgt{font-family:"Archivo",sans-serif;font-weight:800;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--field)}
+
+/* Capitalism */
+#capitalism{background:var(--sky)}
+.define{max-width:46rem;font-size:clamp(1.25rem,2.4vw,1.6rem);line-height:1.4;font-family:"Archivo",sans-serif;font-weight:700;text-wrap:balance;margin:0 0 2.5rem}
+.define em{font-style:normal;color:var(--field)}
+.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));gap:2rem 3rem;max-width:62rem}
+.three > div{min-width:0;border-top:3px solid var(--sun-deep);padding-top:1rem}
+.three h3{font-size:clamp(1.3rem,2.4vw,1.7rem);font-weight:900;font-stretch:110%;margin-bottom:.6rem;text-wrap:balance}
+.three p{font-size:1.08rem}
+.case{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr));gap:2.5rem 3.5rem;margin-top:3.5rem;max-width:62rem}
 .case > div{min-width:0}
 .case h3{font-size:clamp(1.4rem,2.8vw,1.9rem);font-weight:900;font-stretch:110%;margin-bottom:.9rem;text-wrap:balance}
 .case p{font-size:1.08rem}
-.compare{margin-top:3rem;max-width:62rem;display:grid;grid-template-columns:1fr 1fr;border:2px solid var(--ink)}
-.compare > div{padding:1.25rem 1.4rem;min-width:0}
-.compare > div + div{border-left:2px solid var(--ink)}
-.compare .free{background:var(--sky)}
-.compare h4{font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);margin-bottom:.8rem}
-.compare .n{font-family:"Archivo",sans-serif;font-weight:900;font-stretch:112%;font-size:clamp(2rem,4.5vw,3rem);line-height:1;font-variant-numeric:tabular-nums}
-.compare .free .n{color:var(--field)}
-.compare .l{font-size:.95rem;color:var(--ink-2);margin:.3rem 0 1rem}
-.compare .l:last-child{margin-bottom:0}
+.sb{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));gap:1.25rem;max-width:62rem;margin-top:2.5rem}
+.chart{margin:0;border:2px solid var(--ink);padding:1.1rem 1.2rem;min-width:0;background:var(--paper)}
+.chart h4{font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);margin-bottom:.9rem}
+.chart .row{margin:0 0 .9rem}
+.chart .lab{font-size:.9rem;color:var(--ink-2);margin-bottom:.2rem}
+.chart .track{background:var(--sky);height:1.5rem;border:1px solid var(--line)}
+.chart .fill{height:100%;background:var(--sky-deep);border-right:3px solid var(--ink-2)}
+.chart .fill.good{background:var(--field);border-right-color:var(--ink)}
+.chart .val{font-family:"Archivo",sans-serif;font-weight:900;font-stretch:112%;font-size:1.6rem;line-height:1.1;margin-top:.25rem;font-variant-numeric:tabular-nums}
+.chart figcaption{font-size:.9rem;color:var(--ink-2);margin-top:.3rem}
+.chart figcaption a{color:var(--field)}
+.chart.plain .val{font-size:2rem}
 .compare-cite{max-width:62rem;font-size:.85rem;color:var(--ink-2);margin-top:.6rem}
-.elections{max-width:62rem;margin:1.75rem 0 0;padding:1rem 1.2rem;border-left:4px solid var(--sun);background:var(--sky);font-family:"Archivo",sans-serif;font-weight:700;font-size:1.1rem;line-height:1.35}
-.next{display:flex;flex-wrap:wrap;gap:.75rem 1.25rem;align-items:center;margin-top:2.5rem}
+.compare-cite a{color:var(--field)}
+.next{display:flex;flex-wrap:wrap;gap:.75rem 1.25rem;align-items:center;margin-top:1.5rem}
 .next a.txt{font-family:"Archivo",sans-serif;font-weight:700;color:var(--field)}
-.hero .lede .receipt-line{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:110%;font-size:clamp(1.3rem,2.6vw,1.7rem);color:var(--field);margin-top:1.25rem}
-.gone{list-style:none;margin:0;padding:0;max-width:62rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:1.5rem 2.5rem}
-.gone li{min-width:0;border-top:3px solid var(--ink);padding-top:.8rem}
-.gone s{display:block;font-family:"Archivo",sans-serif;font-weight:900;font-stretch:110%;font-size:clamp(1.35rem,2.6vw,1.75rem);line-height:1.1;text-decoration-color:var(--sun-deep);text-decoration-thickness:.18em;margin-bottom:.45rem}
-.gone span{display:block;font-size:1rem;color:var(--ink-2)}
-.villain{margin:3rem 0 0;max-width:46rem;background:var(--ink);color:var(--paper);padding:1.5rem 1.6rem}
-.villain h3{color:var(--sun);font-size:clamp(1.4rem,2.8vw,1.9rem);font-weight:900;font-stretch:110%;margin-bottom:.7rem}
-.villain p{margin:0;font-size:1.12rem}
-.h2-next{margin-top:4.5rem}
-.promises .rc{grid-column:2;font-family:"Archivo",sans-serif;font-weight:700;font-size:.85rem;color:var(--field)}
-@media (max-width:52rem){.promises .rc{grid-column:1}}
-.principles{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));gap:1.5rem 2.5rem;max-width:62rem}
+
+/* Perspective */
+.principles{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:1.5rem 2.5rem;max-width:62rem}
 .principles li{border-top:3px solid var(--sky-deep);padding-top:.9rem}
 .principles h3{font-size:1.15rem;font-weight:800;margin-bottom:.4rem}
 .principles p{font-size:1.02rem;color:var(--ink-2);margin:0}
@@ -136,12 +206,13 @@ section h2{font-weight:900;font-stretch:112%;font-size:clamp(2rem,5vw,3.6rem);ma
 .line-of-split h3{font-size:1rem;font-weight:800;margin-bottom:.4rem}
 .line-of-split p{margin:0;font-size:1rem}
 .line-of-split .up{color:var(--field)}
+@media (max-width:52rem){.line-of-split{grid-template-columns:1fr}}
+
+/* Program */
 .points{list-style:none;margin:0;padding:0;border-top:1px solid var(--line);max-width:62rem}
 .points > li{border-bottom:1px solid var(--line)}
 .points details{padding:1.25rem 0}
-.points summary{
-display:grid;grid-template-columns:3.2rem 1fr auto;gap:1rem;align-items:baseline;cursor:pointer;list-style:none;
-}
+.points summary{display:grid;grid-template-columns:3.2rem 1fr auto;gap:1rem;align-items:baseline;cursor:pointer;list-style:none}
 .points summary::-webkit-details-marker{display:none}
 .pt-num{font-weight:900;font-size:1.6rem;color:var(--sun-deep);font-stretch:110%}
 .points summary h3{font-size:clamp(1.25rem,2.6vw,1.7rem);font-weight:800}
@@ -156,24 +227,34 @@ display:grid;grid-template-columns:3.2rem 1fr auto;gap:1rem;align-items:baseline
 .deep .ev p{margin:0 0 .6em;font-size:1rem}
 .deep .ev p:last-child{margin:0}
 .deep .ev cite{font-style:normal;font-size:.85rem;color:var(--ink-2)}
+.deep .ev cite a{color:var(--field)}
 .deep .hard p{font-size:1rem}
 .deep .hard q{font-family:"Archivo",sans-serif;font-weight:700}
 .share{font-family:"Archivo",sans-serif;font-weight:700;font-size:.95rem;padding:.6rem .9rem;border:2px solid var(--ink);display:inline-block}
 @media (max-width:40rem){
-.points summary{grid-template-columns:2.4rem 1fr;}
+.points summary{grid-template-columns:2.4rem 1fr}
 .points summary .how{grid-column:2;font-size:.8rem}
 .points .pt{grid-column:1/3}
 .deep{margin-left:0}
 }
-.evidence{background:var(--ink);color:var(--paper)}
-.evidence h2,.evidence .sub{color:var(--paper)}
-.evidence .sub{color:var(--sky-deep)}
+.elections{max-width:62rem;margin:1.75rem 0 0;padding:1rem 1.2rem;border-left:4px solid var(--sun);background:var(--sky);font-family:"Archivo",sans-serif;font-weight:700;font-size:1.1rem;line-height:1.35}
+
+/* Who pays */
+#who-pays h3{font-size:1.3rem;margin-bottom:.5rem}
+.pay-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));gap:2rem 3rem;max-width:62rem}
+
+/* Receipts: fixed colors so it reads the same in both themes */
+.evidence{background:#10283A;color:#FBFAF4}
+.evidence h2{color:#FBFAF4}
+.evidence .sub{color:#C6DAE8}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:2rem 2.5rem;max-width:70rem}
-.stat-n{font-weight:900;font-stretch:112%;font-size:clamp(2.4rem,5vw,3.6rem);line-height:1;color:var(--sun)}
+.stat-n{font-weight:900;font-stretch:112%;font-size:clamp(2rem,3.4vw,2.9rem);line-height:1;color:#F3C33C;text-wrap:balance}
 .stat p{margin:.5rem 0 0;font-size:1rem;line-height:1.45}
-.stat cite{display:block;font-style:normal;font-size:.8rem;color:var(--sky-deep);margin-top:.4rem}
-.evidence .rule{margin-top:3rem;border-top:1px solid #3C5468;padding-top:1.5rem;max-width:40rem;font-size:1.05rem}
-.evidence a{color:var(--sun)}
+.stat cite{display:block;font-style:normal;font-size:.8rem;color:#C6DAE8;margin-top:.4rem}
+.evidence .rule{margin-top:3rem;border-top:1px solid #3C5468;padding-top:1.5rem;max-width:42rem;font-size:1.05rem}
+.evidence a{color:#F3C33C}
+
+/* Sign */
 .sign{background:var(--sun);color:#10283A;border-top:0}
 .sign h2{color:#10283A}
 .sign .sub{color:#3b3414}
@@ -183,25 +264,19 @@ display:grid;grid-template-columns:3.2rem 1fr auto;gap:1rem;align-items:baseline
 .form .btn{background:#10283A;color:var(--sun);font-size:1.05rem;padding:.85rem 1.2rem}
 .form .btn:hover{background:#1c3d55}
 .form small{font-size:.9rem;color:#3b3414}
-.thanks{display:none;font-family:"Archivo",sans-serif;font-weight:800;font-size:1.4rem}
-.sign.done .form{display:none}
-.sign.done .thanks{display:block}
+.sign .state{background:#FFFDF5;border-left-color:#10283A;color:#10283A;max-width:30rem}
+
 footer{padding:3rem 0 4rem;font-size:.95rem;color:var(--ink-2)}
 footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:2rem}
 footer h3{font-size:1rem;font-weight:800;margin-bottom:.6rem;color:var(--ink)}
 footer ul{margin:0;padding-left:1.1rem}
 footer li{margin-bottom:.4rem;overflow-wrap:anywhere}
-footer .draft{border:1px dashed var(--line);padding:1rem;margin-bottom:2rem;max-width:40rem}
-@media (max-width:52rem){
-.promises li{grid-template-columns:1fr}
-.line-of-split{grid-template-columns:1fr}
-}
+footer .draft{border:1px dashed var(--line);padding:1rem;margin-bottom:2rem;max-width:44rem}
 @media (max-width:30rem){
 .compare{grid-template-columns:1fr}
-.compare > div + div{border-left:0;border-top:2px solid var(--ink)}
 }
 @media print{
-.nav,.sign,.sunrise,.share,.next{display:none}
+.nav,.sign,.sunrise,.share,.next,.hero-cta,.menu-btn{display:none}
 body{font-size:11pt;color:#000;background:#fff}
 section{padding:1.5rem 0;break-inside:avoid-page}
 .points details{display:block}
@@ -213,115 +288,179 @@ a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em}
 </style>
 </head>
 <body>
-<nav class="nav" aria-label="Sections">
+<nav class="nav" id="nav" aria-label="Sections">
 <div class="wrap">
-<a class="wordmark" href="#top">THE 2040 <span>PROGRAM</span></a>
-<ul>
-<li><a href="#promise">The promise</a></li>
-<li><a href="#perspective">Our perspective</a></li>
-<li><a href="#program">The program</a></li>
-<li><a href="#evidence">The receipts</a></li>
-<li><a href="#who-pays">Who pays</a></li>
-</ul>
+<a class="wordmark" href="#top">FREE MARKET <span>ABUNDANCE</span></a>
+<button class="menu-btn" type="button" aria-expanded="false" aria-controls="navlist" id="menubtn">Menu</button>
 <a class="btn sm" href="#sign">Sign</a>
+<ul id="navlist">
+<li><a href="#promise">The promise</a></li>
+<li><a href="#capitalism">Capitalism</a></li>
+<li><a href="#program">The program</a></li>
+<li><a href="#who-pays">Who pays</a></li>
+<li><a href="#evidence">The receipts</a></li>
+</ul>
 </div>
 </nav>
+
 <header class="hero" id="top">
 <div class="wrap">
-<p class="kicker">A program for a free, abundant America by 2040</p>
+<p class="kicker">The 2040 Program · A free, abundant America</p>
 <h1>Abundance is produced.</h1>
+<div class="hero-grid">
 <div class="lede">
-<p>Rent eats your paycheck. The power bill keeps climbing. The doctor can see you in March. Every fix on offer is another program, another permit, another fee.</p>
-<p>Now picture 2040. You own your home. Your power bill is small enough to ignore. Your doctor posts prices and sees you this week. You changed careers twice, and both times the door was open. Nobody handed you this. Millions of people built it, because the rules finally let them.</p>
-<p class="receipt-line">Every promise here has a receipt.</p>
+<p>Rent eats your paycheck. The power bill keeps climbing. The doctor can see you in March. Every fix on offer is another program, another permit, another fee. You have been told to wait, to settle, to make do with less.</p>
+<p class="big-line">We say you deserve more, and we know how it gets built.</p>
+<div class="hero-cta">
+<p class="ask">Sign the 2040 Program. Get the Abundance Brief: one email a week with one price that fell and one rule we are tearing down.</p>
+<form class="inline-form signform" data-form="hero" novalidate>
+<label class="sr" for="email-hero">Your email</label>
+<input id="email-hero" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+<button class="btn big" type="submit">Sign the 2040 Program</button>
+</form>
+<p class="state" data-state="hero" role="status" aria-live="polite"></p>
+<small>One signature, one weekly email, no spam, leave any time.</small>
+<p class="alt"><a href="#program">Read the ten points first</a></p>
 </div>
-<p class="question">What would you build?</p>
+</div>
+<div class="lede picture">
+<h2 class="pic-h">Picture 2040.</h2>
+<p>You own your home, built in months by robots and builders who no longer wait on a permit. Your power bill is small enough to ignore. Your doctor, backed by AI, catches problems early and posts the price on the door. Your kid learns with a tutor that never runs out of patience and a world of friends to grow with. You work fewer hours and keep what you earn.</p>
+<p>Nobody handed it out. Millions of free people built it, because the rules finally let them. That is free-market capitalism: the freedom to build, invent, trade and compete. AI, robots and cheap energy are the tools. You are the point.</p>
+</div>
+</div>
+<p class="receipt-line">Every number on this page has a receipt.</p>
 </div>
 <div class="sunrise" aria-hidden="true"></div>
 </header>
+
 <section id="promise">
 <div class="wrap">
 <h2>What disappears</h2>
-<p class="sub">The things that make life expensive and slow today. In 2040, they are gone.</p>
+<p class="sub">The things that make life expensive and slow today. We are going to make them gone.</p>
 <ul class="gone">
-<li><s>The waiting list</s><span>More clinics and nurses are allowed to treat you.</span></li>
-<li><s>The permit delay</s><span>A home that meets the code gets built, on a deadline.</span></li>
-<li><s>The licensing fee</s><span>Your license works in every state, and work that hurts nobody needs none.</span></li>
-<li><s>The surprise bill</s><span>Every price is posted before you are treated.</span></li>
-<li><s>Rationed power</s><span>Finished solar, storage and reactors are allowed to plug in.</span></li>
-<li><s>Twenty years of student debt</s><span>You learn a trade while you get paid for it.</span></li>
-<li><s>The tariff at checkout</s><span>You buy from anyone, anywhere, at the real price.</span></li>
+<li><s>The waiting list</s><span><b>Instead</b>More clinics and nurses are allowed to treat you.</span></li>
+<li><s>The permit delay</s><span><b>Instead</b>A home that meets the code gets built, on a deadline.</span></li>
+<li><s>The licensing fee</s><span><b>Instead</b>Your license works in every state, and work that hurts nobody needs none.</span></li>
+<li><s>The surprise bill</s><span><b>Instead</b>Every price is posted before you are treated.</span></li>
+<li><s>Rationed power</s><span><b>Instead</b>Finished solar, storage and reactors are allowed to plug in.</span></li>
+<li><s>A degree you pay off for twenty years</s><span><b>Instead</b>You learn a trade while you get paid for it.</span></li>
+<li><s>The tariff at checkout</s><span><b>Instead</b>You buy from anyone, anywhere, at the real price.</span></li>
+<li><s>The bailout you paid for</s><span><b>Instead</b>Companies earn customers or go out of business. Nobody earns a politician.</span></li>
 </ul>
 <div class="villain">
 <h3>Who is in the way</h3>
-<p>Not you. Scarcity is made by permission: the permit office that sits on a new building for years, the license board that charges you to do work you already know how to do, the rule that protects the big company from the small one. Every shortage you feel has an address. We are going to close it.</p>
+<p>Not you. Scarcity is manufactured, and we can name the factory: the permit office that sits on a new building for years, the license board that charges you to do work you already know how to do, the incumbent who hires a lobbyist to keep a competitor out, the rule that protects the big company from the small one. Behind every one of them is someone who gains when you cannot build, and someone who gains when you can. We are on your side of that line.</p>
 </div>
-<h2 class="h2-next">A future that keeps getting cheaper</h2>
-<p class="sub">Nine promises, and the reason every one of them gets kept.</p>
+
+<h2 class="h2-next">Ten ways to build a better life.</h2>
+<p class="sub">Ten promises. Under each one, the rule that changes and the receipt that shows it works.</p>
 <ul class="promises">
-<li><p class="p">A home of your own, at a price you can pay.</p><p class="m"><b>Because</b>the city lets people build.</p><a class="rc" href="#pt-homes">See the receipt</a></li>
-<li><p class="p">Power so cheap you stop checking the bill.</p><p class="m"><b>Because</b>new plants are allowed to plug in.</p><a class="rc" href="#pt-energy">See the receipt</a></li>
-<li><p class="p">A nurse the same day, with the price on the door.</p><p class="m"><b>Because</b>nurses can do what they trained for, and a new clinic needs no competitor’s permission to open.</p><a class="rc" href="#pt-health">See the receipt</a></li>
-<li><p class="p">A great career with no student debt.</p><p class="m"><b>Because</b>you learn a trade while you get paid for it, and nobody asks for a degree the work does not need.</p><a class="rc" href="#pt-time">See the receipt</a></li>
-<li><p class="p">Employers compete for you.</p><p class="m"><b>Because</b>starting and growing a business is easy, so there is always another job offer.</p><a class="rc" href="#pt-workers">See the receipt</a></li>
-<li><p class="p">Work anywhere in America.</p><p class="m"><b>Because</b>a license earned in one state is honored in all of them.</p><a class="rc" href="#pt-time">See the receipt</a></li>
-<li><p class="p">Keep more of every paycheck.</p><p class="m"><b>Because</b>government does less and stops paying for wars it does not need to fight.</p><a class="rc" href="#pt-peace">See the receipt</a></li>
-<li><p class="p">Your kids learn from the best teachers and tutors anywhere.</p><p class="m"><b>Because</b>new schools, tutors and apprenticeships are free to compete for them.</p><a class="rc" href="#pt-time">See the receipt</a></li>
-<li><p class="p">Everything you need gets cheaper, every single year.</p><p class="m"><b>Because</b>free people never stop competing to make it cheaper.</p><a class="rc" href="#evidence">See the receipt</a></li>
+<li><p class="p">A home of your own, at a price you can pay.</p><p class="m"><b>Because</b>the city lets people build.</p><p class="rc"><a href="https://www.texastribune.org/2025/01/22/austin-texas-rents-falling" target="_blank" rel="noopener">Receipt: Austin built, rents fell 19 months straight ↗</a><a href="#pt-homes">How it works</a></p></li>
+<li><p class="p">Power so cheap you stop checking the bill.</p><p class="m"><b>Because</b>new plants are allowed to plug in, and nobody waits five years for a grid connection.</p><p class="rc"><a href="https://ourworldindata.org/grapher/solar-pv-prices" target="_blank" rel="noopener">Receipt: solar panels, 99.9 percent cheaper ↗</a><a href="#pt-energy">How it works</a></p></li>
+<li><p class="p">A nurse the same day, with the price on the door.</p><p class="m"><b>Because</b>nurses can do what they trained for, and a new clinic needs no competitor’s permission to open.</p><p class="rc"><a href="https://surgerycenterok.com/surgery-prices/" target="_blank" rel="noopener">Receipt: a knee scope, $4,458, posted ↗</a><a href="#pt-health">How it works</a></p></li>
+<li><p class="p">A great career with no student debt.</p><p class="m"><b>Because</b>you learn a trade while you get paid for it, and nobody asks for a degree the work does not need.</p><p class="rc"><a href="https://www.newyorkfed.org/research/staff_reports/sr733.html" target="_blank" rel="noopener">Receipt: loans push tuition up, 60 cents on the dollar ↗</a><a href="#pt-time">How it works</a></p></li>
+<li><p class="p">Employers compete for you.</p><p class="m"><b>Because</b>starting and growing a business is easy, so the next job offer is always out there, and your benefits come with you when you take it.</p><p class="rc"><a href="#pt-workers">How it works</a></p></li>
+<li><p class="p">Work anywhere in America.</p><p class="m"><b>Because</b>a license earned in one state is honored in all of them.</p><p class="rc"><a href="https://reason.com/2025/08/29/report-28-states-now-recognize-occupational-licenses-from-elsewhere" target="_blank" rel="noopener">Receipt: 28 states already do it ↗</a><a href="#pt-workers">How it works</a></p></li>
+<li><p class="p">Keep more of every paycheck.</p><p class="m"><b>Because</b>government does less, sells no favors and stops paying for wars it does not need to fight.</p><p class="rc"><a href="#pt-peace">How it works</a><a href="#who-pays">Who pays</a></p></li>
+<li><p class="p">A class size of one for every kid.</p><p class="m"><b>Because</b>AI tutors teach each child at their own pace, and new schools, clubs and apprenticeships are free to compete for them.</p><p class="rc"><a href="https://alpha.school/faq/" target="_blank" rel="noopener">Receipt: it is already running ↗</a><a href="#pt-time">How it works</a></p></li>
+<li><p class="p">Buy from anyone, anywhere, at the real price.</p><p class="m"><b>Because</b>a tariff is a tax on your own family, and we repeal it.</p><p class="rc"><a href="#pt-trade">How it works</a></p></li>
+<li><p class="p">The essentials cost less of your life.</p><p class="m"><b>Because</b>open competition gives millions of people a reason to build more and find better ways to serve you.</p><p class="rc"><a href="https://humanprogress.org/the-simon-abundance-index-2026/" target="_blank" rel="noopener">Receipt: 50 basics, 70.9 percent cheaper in hours of work ↗</a><a href="#evidence">The receipts</a></p></li>
 </ul>
-<p class="kept">That is the promise. Here is why it is the one that gets kept.</p>
+
+<h2 class="h2-next">What builds it</h2>
+<p class="sub">Free people with new tools. Here is what we are going to build with them.</p>
+<div class="builds">
+<div><h3>Medicine that costs a fraction</h3><p>AI that reads scans, designs treatments and finds cures faster. Disease caught early instead of managed for decades. More clinics, more nurses, posted prices.</p><p class="tgt">Our target: care that costs a fraction of today’s $5 trillion a year</p></div>
+<div><h3>Robots that build</h3><p>Humanoid robots on the job site, working around the clock, plus permission to build. Factory-built homes approved like any other home.</p><p class="tgt">Our target: a home built in months, not years</p></div>
+<div><h3>Energy that cuts every price</h3><p>Energy goes into everything: food, homes, factories, computing, care. Cheap power makes all of it cheaper at once.</p><p class="tgt">Our target: power too cheap to think about</p></div>
+<div><h3>A class size of one</h3><p>An AI tutor for every child, shaped to their pace and interests, with friends, teams and projects for the rest of the day. Schools like Alpha School already pair AI tutoring with human guides.</p><p class="tgt">Our target: every kid, everywhere</p></div>
+<div><h3>Care at home</h3><p>Robots that help an aging parent stay independent and give families back their evenings, with people still in charge.</p><p class="tgt">Our target: more independence, less burnout</p></div>
+<div><h3>Your time back</h3><p>When a good life costs fewer hours of work, you choose what to do with the rest. A shorter workweek, paid for by productivity, not by decree.</p><p class="tgt">Our goal: you keep what you earn. All of it.</p></div>
+</div>
+<p class="kept">That is the promise. Here is why this is the one that gets kept.</p>
+<div class="next"><a class="btn" href="#capitalism">Why it works</a><a class="txt" href="#program">Read the ten points</a></div>
+</div>
+</section>
+
+<section id="capitalism">
+<div class="wrap">
+<h2>Say the word. Capitalism.</h2>
+<p class="sub">We are capitalists. We are proud of it, and by the end of this page you will see why you should be too.</p>
+<p class="define">Capitalism is <em>free people producing and trading by choice</em>: owning what you build, choosing your work, investing your savings, and buying and selling by mutual agreement. Nobody is forced in. Nobody is locked out. Success is earned from customers, never bought from government.</p>
+<div class="three">
+<div><h3>Capitalism is you.</h3><p>A nurse who opens her own clinic. A cashier who becomes a crew chief. A baker who hires six people. A worker who takes a better offer across town. Everyone who makes something, offers it to willing people and keeps the reward is part of it. The word belongs to builders, and we are taking it back.</p></div>
+<div><h3>Capitalism is not a bailout.</h3><p>Subsidies, bailouts, special tax breaks and government stakes in private companies are not capitalism. They are favors for the connected, paid for by you. We are against every one of them. A capitalist earns a customer. A crony buys a politician.</p></div>
+<div><h3>Capitalism has the receipts.</h3><p>Prices fell. Fewer children die. Billions of people left extreme poverty. It happened as more people got free to build, trade and compete. The scoreboard is right below.</p></div>
+</div>
+
 <div class="case">
 <div>
-<h3>Free people build it.</h3>
+<h3>Free people produce more. That is the whole argument.</h3>
 <p>Homes, health care, energy. Someone has to build the house, train the nurse and run the power plant. The system that wins is the one that gets the most people building, and nothing gets people building like freedom.</p>
-<p>Free people produce more. When you can start a business without permission, keep what you earn, trade with anyone and change jobs when you want, you have every reason to work hard, try something new and get better at it. Millions of people doing that at once is what makes things cheap.</p>
-<p>People under systems that decide for them produce less. When a plan sets your job, your price and your output, there is no reward for doing better and no way to try a better idea without approval. The plan stalls, the shelves empty, and the people who could have fixed it are not allowed to.</p>
+<p>When you can start a business without permission, keep what you earn, trade with anyone and change jobs when you want, you have every reason to work hard, try something new and get better at it. Millions of people doing that at once is what makes things cheap.</p>
+<p>Where people need permission to produce, less gets produced. Where they are free, you get abundance. Rank the world’s countries by economic freedom and the gap between the top and the bottom is enormous, in income and in years of life.</p>
 </div>
 <div>
 <h3>The record</h3>
-<p>Rank the world’s countries by economic freedom and the gap between the top and the bottom is enormous, in income and in years of life.</p>
-<p>That pattern is not one study. A review of 198 studies using that index found that over two thirds tied economic freedom to good outcomes, such as faster growth, and fewer than 4 percent tied it to bad ones. The direction has held across decades and continents.</p>
+<p>That pattern is not one study. A 2014 review of 198 studies using the economic freedom index found that over two thirds tied economic freedom to good outcomes, such as faster growth, and fewer than 4 percent tied it to bad ones.</p>
 <p>It shows in how people feel about their lives, too. Across countries, freedom to make life choices is one of six factors that together account for more than three quarters of the differences in how people rate their lives.</p>
+<p>And it shows in your own life. Measured in hours of work, 50 basic commodities cost 70.9 percent less than in 1980. The average American worker put in about 3,100 hours a year in 1870 and about 1,800 in 2023. Productivity bought that time. It will buy the next round too.</p>
 </div>
 </div>
-<div class="compare" role="group" aria-label="Most free and least free quarter of countries, 2023">
-<div class="free">
-<h4>Most free quarter of countries</h4>
-<div class="n">$66,434</div><p class="l">average income per person</p>
-<div class="n">79 years</div><p class="l">average life expectancy</p>
+<div class="sb">
+<figure class="chart"><h4>GDP per person, 2024, purchasing-power adjusted</h4>
+<div class="row"><div class="lab">Most free quarter of countries</div><div class="track"><div class="fill good" style="width:100%"></div></div><div class="val">$65,596</div></div>
+<div class="row"><div class="lab">Least free quarter</div><div class="track"><div class="fill" style="width:14.6%"></div></div><div class="val">$9,552</div></div>
+<figcaption>About 6.9 times higher. <a href="https://www.cato.org/economic-freedom-world/2026" target="_blank" rel="noopener">EFW 2026</a></figcaption></figure>
+<figure class="chart"><h4>Life expectancy, years, 2024</h4>
+<div class="row"><div class="lab">Most free quarter of countries</div><div class="track"><div class="fill good" style="width:100%"></div></div><div class="val">80.7</div></div>
+<div class="row"><div class="lab">Least free quarter</div><div class="track"><div class="fill" style="width:83.1%"></div></div><div class="val">67.1</div></div>
+<figcaption>13.6 more years of life. <a href="https://www.cato.org/economic-freedom-world/2026" target="_blank" rel="noopener">EFW 2026</a></figcaption></figure>
+<figure class="chart"><h4>Share living on under $4.10 a day, 2024</h4>
+<div class="row"><div class="lab">Most free quarter of countries</div><div class="track"><div class="fill good" style="width:4.9%"></div></div><div class="val">2%</div></div>
+<div class="row"><div class="lab">Least free quarter</div><div class="track"><div class="fill" style="width:100%"></div></div><div class="val">41%</div></div>
+<figcaption>Twenty times the poverty. <a href="https://www.fraserinstitute.org/sites/default/files/2026-10/economic-freedom-of-the-world-2026-newsrelease-intl_0.pdf" target="_blank" rel="noopener">Fraser Institute, 2026</a></figcaption></figure>
+<figure class="chart"><h4>Share of humanity in extreme poverty, under $2.15 a day</h4>
+<div class="row"><div class="lab">1990</div><div class="track"><div class="fill" style="width:95%"></div></div><div class="val">38%</div></div>
+<div class="row"><div class="lab">2019</div><div class="track"><div class="fill good" style="width:21.3%"></div></div><div class="val">8.5%</div></div>
+<figcaption>About 2 billion people down to about 700 million. <a href="https://datatopics.worldbank.org/sdgatlas/archive/2023/goal-1-no-poverty/" target="_blank" rel="noopener">World Bank</a></figcaption></figure>
+<figure class="chart plain"><h4>Price of a solar panel, dollars per watt, 2025 dollars</h4>
+<div class="row"><div class="lab">1975</div><div class="val">$132.38</div></div>
+<div class="row"><div class="lab">2025</div><div class="val">$0.12</div></div>
+<figcaption>About 1,100 times cheaper. <a href="https://ourworldindata.org/grapher/solar-pv-prices" target="_blank" rel="noopener">Our World in Data</a></figcaption></figure>
+<figure class="chart plain"><h4>Hours worked per US worker, per year</h4>
+<div class="row"><div class="lab">1870</div><div class="val">3,096</div></div>
+<div class="row"><div class="lab">2023</div><div class="val">1,789</div></div>
+<figcaption>About 42 percent fewer hours for a far richer life. <a href="https://ourworldindata.org/grapher/annual-working-hours-per-worker" target="_blank" rel="noopener">Our World in Data</a></figcaption></figure>
 </div>
-<div>
-<h4>Least free quarter of countries</h4>
-<div class="n">$10,751</div><p class="l">average income per person</p>
-<div class="n">62 years</div><p class="l">average life expectancy</p>
-</div>
-</div>
-<p class="compare-cite">Economic Freedom of the World, 2025 report, 2023 data. Review of 198 studies: Hall and Lawson, 2014. Life choices: World Happiness Report, 2025.</p>
+<p class="compare-cite">Sources: <a href="https://www.cato.org/economic-freedom-world/2026" target="_blank" rel="noopener">Economic Freedom of the World 2026</a> (2024 data, quartile averages); <a href="https://efotw.org/sites/default/files/economic-freedom-in-the-literature.pdf" target="_blank" rel="noopener">Hall and Lawson, 2014</a>; <a href="https://www.worldhappiness.report/faq/" target="_blank" rel="noopener">World Happiness Report</a>; <a href="https://humanprogress.org/the-simon-abundance-index-2026/" target="_blank" rel="noopener">Simon Abundance Index 2026</a>. Bars are proportional to the values printed on them.</p>
 <div class="case">
 <div>
 <h3>It is already happening.</h3>
-<p>Since 1990, the share of humanity living in extreme poverty fell from 38 percent to under 9 percent. Measured in hours of work, the basics cost 70.9 percent less than in 1980. Solar power got 99.9 percent cheaper. Nobody handed any of it out. Free people produced it.</p>
+<p>Between 1990 and 2019, the share of humanity living in extreme poverty fell from 38 percent to 8.5 percent. Measured in hours of work, 50 basic commodities cost 70.9 percent less than in 1980. Solar panels got 99.9 percent cheaper. Nobody handed any of it out. Free people produced it.</p>
 <p>Now imagine what they build when we stop getting in their way.</p>
 </div>
 <div>
 <h3>How we get there</h3>
-<p>Ten points. Every one removes a rule that stops people from producing: building homes, opening clinics, connecting power plants, learning trades, moving for work and starting companies. No new bureaucracy. Government gets out of the way, and people do the rest.</p>
-<div class="next"><a class="btn" href="#program">Read the 10 points</a><a class="txt" href="#evidence">See the receipts</a></div>
+<p>Ten points. Every one removes a rule that stops people from producing: building homes, opening clinics, connecting power plants, learning trades, moving for work and starting companies. No new agency. Government gets out of the way, and people do the rest.</p>
+<div class="next"><a class="btn" href="#program">Read the ten points</a><a class="txt" href="#sign">Sign the program</a></div>
 </div>
 </div>
 </div>
 </section>
+
 <section id="perspective">
 <div class="wrap">
-<h2>Our perspective</h2>
-<p class="sub">Every promise above has a builder, a price that fell, and a rule that got out of the way. This is what we believe.</p>
+<h2>What we believe</h2>
+<p class="sub">Every promise above has a builder, a price that fell, and a rule that got out of the way. These are the ideas underneath.</p>
 <ul class="principles">
-<li><h3>You are the starting point</h3><p>People do not exist to serve a collective. Freedom means the ability to own, create, exchange, associate, dissent, and pursue your own version of a good life.</p></li>
+<li><h3>You are the starting point</h3><p>Freedom means the ability to own, create, exchange, associate, dissent, and pursue your own version of a good life. Your life is yours.</p></li>
 <li><h3>Cooperation is voluntary, and it is everywhere</h3><p>Firms, cooperatives, charities, congregations, mutual aid societies and neighborhood funds are all free people choosing to work together. None of them needs a mandate.</p></li>
-<li><h3>Capital is tools</h3><p>Laboratories, factories, computing, savings and investment are how work gets easier. Every dollar taxed or tied up in red tape is a tool that never gets built.</p></li>
-<li><h3>Prices are information</h3><p>Competition and price signals coordinate knowledge no planner can collect. Where prices are hidden or fixed, the information dies and the shortages start.</p></li>
+<li><h3>Capital is tools</h3><p>Laboratories, factories, computing, savings and investment are how work gets easier. A dollar taxed or tied up in red tape is a tool that never gets built.</p></li>
+<li><h3>Prices are information</h3><p>Posted, honest prices tell millions of people what to build next. Where prices are hidden or fixed, the information dies and the shortages start.</p></li>
 <li><h3>Abundance is produced, not allocated</h3><p>Cheaper intelligence speeds discovery. Cheaper energy makes everything cheaper to make. Robotics cuts the labor in every good. Competition passes the gains to you.</p></li>
-<li><h3>Builders and workers, together</h3><p>Breakthroughs come from founders and from the engineers, suppliers, workers and customers around them. Extraordinary achievement and broad gains are the same story.</p></li>
+<li><h3>Builders and workers, together</h3><p>Breakthroughs come from founders and from the engineers, suppliers, workers and customers around them. The gains reach you through the same door every time: a competitor who wants your business or your labor.</p></li>
 <li><h3>A government you barely notice</h3><p>Rights, impartial courts, contracts and defense. Small enough to stay out of your way, strong enough to stop violence, theft and fraud.</p></li>
 <li><h3>Flourishing is more than GDP</h3><p>Health, family, meaning, creativity, time and community. A cheaper life is the floor. What you do with the freedom is the point.</p></li>
 </ul>
@@ -337,35 +476,35 @@ a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em}
 </div>
 </div>
 </section>
+
 <section id="program">
 <div class="wrap">
 <h2>What we fight for</h2>
-<p class="sub">Ten points. Each one names the rule that changes. None needs a new tax, a new agency, a subsidy, or a government stake in a private company. Open any point to see how it works.</p>
+<p class="sub">Ten points. Each one names the rule that changes. None creates a new agency, hands out a subsidy or puts government in the ownership of a private company. Open any point to see how it works.</p>
 <ol class="points">
 <li id="pt-time"><details>
 <summary><span class="pt-num">1</span><h3>More time, more opportunity</h3><span class="how">See how it works</span>
-<p class="pt">Productivity is how people win back their time. Open every job to people who can do it, degree or not. Stop cheap federal loans from inflating tuition. Let new schools, apprenticeships and skills tests compete. Learning should cost less every year.</p>
+<p class="pt">Productivity is how people win back their time. Open every job to people who can do it, degree or not. Stop cheap federal loans from inflating tuition. Let new schools, AI tutors, apprenticeships and skills tests compete. Give every kid a class size of one.</p>
 </summary>
 <div class="deep">
 <div><h4>What is broken</h4><p>More than one in five working Americans holds a government license to do their job, and a license earned in one state often counts for nothing in the next. Meanwhile the main ticket to a good job, a degree, keeps getting more expensive, and federal loans help push the price up.</p></div>
 <div><h4>How we fix it</h4><ul>
 <li>Hire on tested skill, not on a degree the work does not need, starting with every public job.</li>
-<li>Honor a license earned in one state in every state.</li>
 <li>Put a sunset on every license: prove it prevents real harm, or it expires.</li>
 <li>Cap federal lending so it stops feeding tuition increases.</li>
-<li>Give apprenticeships, skills tests and new schools the same access to students and credit that colleges get.</li>
+<li>Let apprenticeships, skills tests and new schools compete for students on the same footing as colleges.</li>
+<li>Let AI tutors, microschools and learning pods open without a district’s permission.</li>
 </ul></div>
 <div class="ev">
-<p>The average American worker put in 3,096 hours a year in 1870 and 1,789 in 2023, about 42 percent fewer. No law mandated it. Productivity bought the time. <cite>Our World in Data, from Huberman and Minns and the Penn World Table, 2025</cite></p>
-<p>Published tuition and fees at a public four year college rose from $5,940 in 1995 to $11,950 in 2025, after inflation. <cite>College Board, Trends in College Pricing, 2025</cite></p>
-<p>For each extra dollar of subsidized federal loans available, colleges raised tuition by about 60 cents. <cite>Lucca, Nadauld and Shen, New York Fed Staff Report 733, 2015, revised 2017</cite></p>
-<p>As of 2025, 28 states recognize occupational licenses earned elsewhere. <cite>Trudeau, Timmons and Seevers, reported August 2025</cite></p>
+<p>Published tuition and fees at a public four year college rose from $5,940 in 1995 to $11,950 in 2025, after inflation. <cite><a href="https://research.collegeboard.org/trends/college-pricing" target="_blank" rel="noopener">College Board, Trends in College Pricing, 2025</a></cite></p>
+<p>For each extra dollar of subsidized federal loans available, colleges raised tuition by about 60 cents. <cite><a href="https://www.newyorkfed.org/research/staff_reports/sr733.html" target="_blank" rel="noopener">Lucca, Nadauld and Shen, New York Fed Staff Report 733</a></cite></p>
+<p>Alpha School already runs the model: two hours a day of AI-guided academics, the rest of the day for projects, sports and life skills, with human guides in the room. <cite><a href="https://alpha.school/faq/" target="_blank" rel="noopener">Alpha School, how it works</a></cite></p>
 </div>
 <div class="hard"><h4>The hard question</h4>
 <p><q>If federal loans shrink, how does a kid without money go to college?</q></p>
-<p>Today that kid borrows more each year to pay a price the loans helped push up. Capping the loans removes part of the reason tuition rises. Some students will borrow less, or borrow from lenders who look at whether a program pays off. That pushes students away from expensive programs that do not raise earnings and toward cheaper ones that do. Apprenticeships pay the student instead of charging them.</p>
+<p>Today that kid borrows more each year to pay a price the loans helped push up. Capping the loans removes part of the reason tuition rises. Lenders who look at whether a program pays off will fund the ones that do, and students will walk away from the ones that do not. Apprenticeships pay the student instead of charging them.</p>
 </div>
-<p class="share">Your great great grandparents worked 3,096 hours a year. You work 1,789. Keep going.</p>
+<p class="share">For each extra dollar of subsidized federal student loans on offer, tuition rose about 60 cents.</p>
 </div>
 </details></li>
 <li id="pt-health"><details>
@@ -379,23 +518,22 @@ a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em}
 <li>End certificate of need laws, so a new clinic or scanner no longer needs a state board’s permission that its competitors can contest.</li>
 <li>Reciprocity: a drug approved by a trusted regulator abroad can be sold here unless the FDA finds a reason to block it.</li>
 <li>One posted, all in price for every common procedure, before treatment.</li>
-<li>Larger health savings accounts that follow the person from job to job.</li>
+<li>Health savings accounts that follow the person from job to job, and insurance that goes back to being insurance: cheap, portable, for the catastrophe, not the checkup.</li>
 </ul></div>
 <div class="ev">
-<p>Posted prices already work. The Surgery Center of Oklahoma lists one all inclusive price per surgery, covering surgeon, anesthesia and facility. A knee arthroscopy is listed at $4,458. <cite>surgerycenterok.com price list, 2025</cite></p>
-<p>In Canada’s single payer system, the median wait from a family doctor’s referral to treatment was 28.6 weeks in 2025. <cite>Fraser Institute, Waiting Your Turn, 2025</cite></p>
-<p>National health spending: $5.3 trillion, $15,474 per person, 18.0 percent of GDP in 2024, projected to reach 20.6 percent by 2034. <cite>CMS National Health Expenditure fact sheet, 2026</cite></p>
+<p>Posted prices already work. The Surgery Center of Oklahoma lists one all inclusive price per surgery, covering surgeon, anesthesia and facility. A knee arthroscopy is listed at $4,458. <cite><a href="https://surgerycenterok.com/surgery-prices/" target="_blank" rel="noopener">surgerycenterok.com price list</a></cite></p>
+<p>National health spending: $5.3 trillion, $15,474 per person, 18.0 percent of GDP in 2024, projected to reach 20.6 percent by 2034. <cite><a href="https://www.cms.gov/data-research/statistics-trends-and-reports/national-health-expenditure-data/nhe-fact-sheet" target="_blank" rel="noopener">CMS National Health Expenditure fact sheet</a></cite></p>
 </div>
 <div class="hard"><h4>The hard question</h4>
-<p><q>Wouldn’t a single government plan be simpler?</q></p>
-<p>A single plan sets one budget, and a fixed budget rations care by making people wait. Our approach goes the other way: add providers and make prices visible, so the same money buys far more care. See <a href="#who-pays">Who pays</a>.</p>
+<p><q>What happens to me if I get seriously sick and cannot pay?</q></p>
+<p>You are covered, and it costs you less than today. Real insurance, bought for the catastrophe and priced like it, is cheap when the routine care underneath it costs what a visit to the Surgery Center of Oklahoma costs. It travels with you from job to job, so losing a job never means losing care. Charity care, mutual aid and family carry further when a clinic visit costs what a haircut costs. And a hospital that posts its prices cannot bury you in a bill it made up afterward.</p>
 </div>
 <p class="share">A knee scope for $4,458, posted in advance. Why isn’t every price like this?</p>
 </div>
 </details></li>
 <li id="pt-homes"><details>
 <summary><span class="pt-num">3</span><h3>Homes everyone can afford</h3><span class="how">See how it works</span>
-<p class="pt">Rent is high because building is illegal in most places. Allow homes by right. Approve permits on a deadline. End parking mandates. Legalize modular and manufactured homes. More homes push rents down, and nothing else works as well.</p>
+<p class="pt">Rent is high because building is illegal in most of the places people want to live. Allow homes by right. Approve permits on a deadline. End parking mandates. Legalize modular and manufactured homes. Let robots build. More homes push rents down, and nothing else works as well.</p>
 </summary>
 <div class="deep">
 <div><h4>What is broken</h4><p>Building a home in America has gotten harder, not easier. Value added per construction worker was about 40 percent lower in 2020 than in 1970, while the rest of the economy got more productive. Before anyone picks up a hammer, a project faces zoning that bans everything but detached houses, discretionary permits that take years, and rules that dictate how many parking spaces a home must come with.</p></div>
@@ -403,18 +541,18 @@ a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em}
 <li>Homes by right: if a project meets the written code, it gets built. No hearing, no veto.</li>
 <li>Permits on a deadline: a fixed number of days to say yes or no. Silence counts as yes.</li>
 <li>No parking mandates: builders and buyers decide.</li>
-<li>Factory built homes approved on the same terms as homes built on site.</li>
+<li>Factory built and robot built homes approved on the same terms as homes built on site.</li>
 <li>Lot splits by right, and single stair reform for mid-rise apartments.</li>
 <li>No rent control: it shrinks the supply it is meant to protect.</li>
 </ul></div>
 <div class="ev">
-<p>Austin let builders build. The region permitted 957 apartments per 100,000 residents from 2021 to 2023, and rents then fell for 19 straight months, to a typical asking rent of $1,645 in December 2024. <cite>Texas Tribune analysis of Census and Zillow data, January 2025</cite></p>
-<p>San Francisco went the other way. Landlords covered by its 1994 rent control expansion cut the rental housing they offered by 15 percent, and the authors conclude the lost supply likely pushed market rents up citywide. <cite>Diamond, McQuade and Qian, American Economic Review, 2019</cite></p>
-<p>US construction productivity has been flat or falling for decades. <cite>Goolsbee and Syverson, NBER Working Paper 30845, 2023</cite></p>
+<p>Austin let builders build. The region permitted 957 apartments per 100,000 residents from 2021 to 2023, and rents then fell for 19 straight months, to a typical asking rent of $1,645 in December 2024. <cite><a href="https://www.texastribune.org/2025/01/22/austin-texas-rents-falling" target="_blank" rel="noopener">Texas Tribune analysis of Census and Zillow data, January 2025</a></cite></p>
+<p>San Francisco went the other way. Landlords covered by its 1994 rent control expansion cut the rental housing they offered by 15 percent, and the authors conclude the lost supply likely pushed market rents up citywide. <cite><a href="https://www.aeaweb.org/articles?id=10.1257/aer.20181289" target="_blank" rel="noopener">Diamond, McQuade and Qian, American Economic Review, 2019</a></cite></p>
+<p>US construction productivity has been flat or falling for decades. <cite><a href="https://www.nber.org/papers/w30845" target="_blank" rel="noopener">Goolsbee and Syverson, NBER Working Paper 30845, 2023</a></cite></p>
 </div>
 <div class="hard"><h4>The hard question</h4>
 <p><q>New buildings are luxury apartments. How does that help someone who can’t afford them?</q></p>
-<p>The new units are usually the expensive ones. They help by giving higher earners somewhere new to live, so those people stop bidding up older apartments. Austin’s rents fell across the market, not only in the new towers. It takes a few years, and a neighborhood can change faster than some residents want. A city that blocks new homes still changes. The only difference is that rents rise faster while it does.</p>
+<p>The new units are usually the expensive ones. They help by giving higher earners somewhere new to live, so those people stop bidding up older apartments. Austin’s rents fell across the market, not only in the new towers, and renters got the relief first, before anyone bought anything. The faster a city says yes, the sooner that happens. A city that blocks new homes still changes. The only difference is that rents rise faster while it does.</p>
 </div>
 <p class="share">Austin built. Austin’s rents fell 19 months straight.</p>
 </div>
@@ -438,32 +576,32 @@ a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em}
 </details></li>
 <li id="pt-energy"><details>
 <summary><span class="pt-num">5</span><h3>Cheap, clean, abundant energy</h3><span class="how">See how it works</span>
-<p class="pt">Cheap energy makes everything cheaper. Clear the permitting logjam with firm deadlines. License advanced nuclear on a fixed timeline. Connect finished solar and storage to the grid. End subsidies for every fuel. Make polluters pay for real harm.</p>
+<p class="pt">Cheap energy makes everything cheaper. Clear the permitting logjam with firm deadlines. License advanced nuclear on a fixed timeline. Connect finished solar and storage to the grid. End subsidies for every fuel. Make polluters pay the people they harm.</p>
 </summary>
 <div class="deep">
-<div><h4>What is broken</h4><p>About 2,061 gigawatts of proposed generation and storage was waiting for a grid connection at the end of 2025. In the regions with data, projects that make it through take more than five years to reach operation. The projects exist. The rules keep them waiting.</p></div>
+<div><h4>What is broken</h4><p>About 2,061 gigawatts of proposed generation and storage was waiting for a grid connection at the end of 2025. In the regions with data, projects that make it through take more than five years to reach operation. The projects are proposed. The rules decide how many ever get built. <cite style="font-style:normal;font-size:.85rem;color:var(--ink-2)"><a href="https://emp.lbl.gov/queues" target="_blank" rel="noopener" style="color:var(--field)">Berkeley Lab, Queued Up 2026</a></cite></p></div>
 <div><h4>How we fix it</h4><ul>
 <li>Deadlines for environmental review: two years for a full review, one for a smaller one. Miss the deadline and the project is approved.</li>
 <li>License proven reactor designs once; each new site gets a yes or no on a set schedule.</li>
 <li>Projects connect in the order they are ready, and the grid operator carries the cost of delay.</li>
 <li>No subsidies for any fuel. Oil, gas, coal, solar, wind and nuclear compete on price.</li>
-<li>A person or town hurt by pollution can collect from whoever caused it.</li>
+<li>A person or town hurt by pollution can collect from whoever caused it, in court, with the polluter paying the legal bill when they lose.</li>
 </ul></div>
 <div class="ev">
-<p>A solar module cost $132.38 per watt in 1975 and $0.12 in 2025, both in 2025 dollars, a drop of about 99.9 percent. Prices fall when production is allowed to scale. <cite>Our World in Data, from Nemet, Farmer and Lafond, and IRENA, 2025</cite></p>
-<p>The median federal environmental impact statement issued from 2019 to 2024 took 2.8 years from notice to final statement. <cite>Council on Environmental Quality, January 2025</cite></p>
-<p>Only three new reactors have started in the US since 2000. Vogtle Units 3 and 4 were planned at $14 billion for 2016 and 2017; they opened in 2023 and 2024 at more than $30 billion. <cite>US Energy Information Administration, 2023 and 2024</cite></p>
+<p>A solar panel cost $132.38 per watt in 1975 and $0.12 in 2025, both in 2025 dollars, a drop of about 99.9 percent. That is the module itself; the install and the wires cost extra, and they are next. <cite><a href="https://ourworldindata.org/grapher/solar-pv-prices" target="_blank" rel="noopener">Our World in Data, from Nemet, Farmer and Lafond, and IRENA</a></cite></p>
+<p>The median federal environmental impact statement issued from 2019 to 2024 took 2.8 years from notice to final statement. <cite><a href="https://nepa.gov/sites/default/files/documents/CEQ_EIS_Timeline_Report_2025-1-13.pdf" target="_blank" rel="noopener">Council on Environmental Quality, January 2025</a></cite></p>
+<p>Only three new reactors have entered service in the US since 2000. Vogtle Units 3 and 4 were planned at $14 billion for 2016 and 2017; they opened in 2023 and 2024 at more than $30 billion. <cite><a href="https://www.eia.gov/todayinenergy/detail.php?id=61963" target="_blank" rel="noopener">US Energy Information Administration</a></cite></p>
 </div>
 <div class="hard"><h4>The hard question</h4>
 <p><q>Vogtle went over budget and years late. Why bet on nuclear?</q></p>
-<p>A fixed licensing timeline does not fix bad project management. It does remove the reason no one has built enough plants to get good at it. Builders get cheaper with repetition, and that only happens if the second plant of a design is allowed to start.</p>
+<p>A fixed licensing timeline does not fix bad project management. It does remove the reason no one has built enough plants to get good at it. Builders get cheaper with repetition, and that only happens if the second plant of a design is allowed to start. Solar got 1,100 times cheaper the same way: by building the next one.</p>
 </div>
-<p class="share">Solar got 99.9 percent cheaper. Now let it plug in.</p>
+<p class="share">Solar panels got 99.9 percent cheaper. Now let them plug in.</p>
 </div>
 </details></li>
 <li id="pt-peace"><details>
 <summary><span class="pt-num">6</span><h3>Peace</h3><span class="how">See how it works</span>
-<p class="pt">War is the most expensive thing government does. Defend the country, not the world. Close bases that defend nothing. Make the Pentagon pass an audit before it gets another dollar. Trade with people everywhere; fight only when attacked.</p>
+<p class="pt">War is the most expensive thing government does, in money and in lives. Defend the country, not the world. Close bases that defend nothing. Make the Pentagon pass an audit before its budget grows. Trade with people everywhere; fight only when attacked.</p>
 </summary>
 <div class="deep">
 <div><h4>How we fix it</h4><ul>
@@ -477,14 +615,15 @@ a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em}
 </details></li>
 <li id="pt-trade"><details>
 <summary><span class="pt-num">7</span><h3>Free trade</h3><span class="how">See how it works</span>
-<p class="pt">Trade between people is how countries get rich and stay at peace. Tariffs are taxes paid by your own families and businesses. Drop broad embargoes that punish ordinary families. Aim any sanctions at named individuals who commit violence, with an end date.</p>
+<p class="pt">Trade between people is how countries get rich and stay at peace. Tariffs are taxes paid by your own family at the checkout. Drop broad embargoes that punish ordinary families. Aim any sanctions at named individuals who commit violence, with an end date.</p>
 </summary>
 <div class="deep">
 <div><h4>How we fix it</h4><ul>
 <li>Free trade between people as the default, regardless of what their governments do.</li>
-<li>Repeal broad tariffs; they are taxes on your own households.</li>
+<li>Repeal broad tariffs; they are taxes on your own household.</li>
 <li>Sanctions narrow, targeted at named individuals responsible for violence, with sunset dates.</li>
 </ul></div>
+<div class="hard"><h4>Where we stand</h4><p>Every tariff is a price increase you did not vote for, collected at the register. We repeal them.</p></div>
 </div>
 </details></li>
 <li id="pt-gov"><details>
@@ -510,111 +649,126 @@ a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em}
 <li>Remove licenses, legally extended patents and regulations that protect incumbents from entry.</li>
 <li>End bailouts that keep failed giants alive.</li>
 <li>Make it simple for workers to own shares or form cooperatives, voluntarily.</li>
+<li>Make switching easy: your data, your number, your account, your records go with you when you leave a company.</li>
 </ul></div>
-<div class="hard"><h4>The hard question</h4><p><q>Don’t markets create monopolies?</q></p><p>Most durable monopolies rest on a license, a patent extended by law, or a regulation that blocks entry. The answer is the same every time: let someone compete.</p></div>
+<div class="hard"><h4>The hard question</h4><p><q>Don’t markets create monopolies?</q></p><p>A company that stays on top by serving you better has to keep doing it every single day, or you leave. The ones that stop fearing you are the ones a rule protects: a license, a patent extended by law, a regulation only an incumbent can afford. The answer is the same every time: let someone compete, and make it easy for you to walk.</p></div>
 </div>
 </details></li>
 <li id="pt-workers"><details>
 <summary><span class="pt-num">10</span><h3>Workers hold the cards</h3><span class="how">See how it works</span>
-<p class="pt">Workers have power when employers have to compete for them. End licensing that traps people in one job or one state. Let benefits follow the worker, not the boss. Band together and bargain if you want; nobody is forced to join or pay.</p>
+<p class="pt">Your power at work is your power to walk. We make walking easy: your license works everywhere, your benefits come with you, and there is always another employer in town because starting one is easy. Band together and bargain if you want; nobody is forced to join or pay.</p>
 </summary>
 <div class="deep">
+<div><h4>What is broken</h4><p>More than one in five workers needs a government license to do their job, and a move across a state line can erase it. Health coverage is chained to the employer. The result is a worker who cannot afford to leave, and a boss who knows it.</p></div>
 <div><h4>How we fix it</h4><ul>
-<li>Universal license recognition across states.</li>
-<li>Portable benefits and health savings that follow the worker.</li>
-<li>Workers are free to band together and bargain, and employers are free to say no and hire someone else. No government-backed bargaining, no forced membership, no forced dues.</li>
-<li>A labor market where employers compete for people, because starting and growing a business is easy.</li>
+<li>Universal license recognition across states, so a better offer anywhere is an offer you can take.</li>
+<li>Portable benefits and health savings that follow the worker, not the job.</li>
+<li>Workers free to band together and bargain, voluntarily. No forced membership, no forced dues.</li>
+<li>Easy entry for new businesses, including worker-owned ones, so every employer has to compete for people.</li>
+<li>No non-compete clauses that stop you from taking your skills across the street.</li>
 </ul></div>
 <div class="ev">
-<p>In 2025, 21.6 percent of employed Americans held a government occupational license. <cite>Bureau of Labor Statistics, Current Population Survey, Table 49, 2025</cite></p>
+<p>In 2025, 21.6 percent of employed Americans held a government occupational license. <cite><a href="https://www.bls.gov/cps/cpsaat49.htm" target="_blank" rel="noopener">Bureau of Labor Statistics, Current Population Survey, Table 49</a></cite></p>
+<p>As of 2025, 28 states recognize occupational licenses earned elsewhere. <cite><a href="https://reason.com/2025/08/29/report-28-states-now-recognize-occupational-licenses-from-elsewhere" target="_blank" rel="noopener">Trudeau, Timmons and Seevers, reported August 2025</a></cite></p>
 </div>
+<div class="hard"><h4>The hard question</h4><p><q>What if there is only one employer in my town?</q></p><p>Then the rules that keep it that way are the problem, and every one of them is on this list. The license that stops you from working in the next state over. The permit that stops a competitor from opening. The health plan that dies the day you quit. Remove them and the one employer in town has company, and you have options.</p></div>
 </div>
 </details></li>
 </ol>
 <p class="elections">Underneath all ten: free and fair elections, open to every candidate with real support. A free society starts there.</p>
 </div>
 </section>
+
+<section id="who-pays">
+<div class="wrap">
+<h2>Who pays?</h2>
+<p class="sub">Less than you pay now. The destination: you keep what you earn, all of it.</p>
+<div class="pay-grid">
+<div>
+<h3>How does a minimal government fund courts, police and defense?</h3>
+<p>Courts, police and defense are a small slice of what government spends today, and a small slice is easy to fund. A low, flat tax covers it on day one. Loser-pays court rules, private arbitration that competes with public courts, and assurance contracts for shared goods carry more of the load over time, and the tax shrinks with every year.</p>
+</div>
+<div>
+<h3>What about people who cannot pay?</h3>
+<p>Cut the price of a home, a clinic visit and a kilowatt hour to a fraction of today’s, and most of the people who need help today will not. For the ones who still do, help goes further than it ever has: insurance that is actually insurance, portable and priced for the catastrophe; charities, mutual aid and congregations whose every dollar goes far further when care costs a fraction of today’s price; and neighbors who are no longer broke themselves. Nobody gets left on the floor of a world this rich.</p>
+</div>
+</div>
+</div>
+</section>
+
 <section class="evidence" id="evidence">
 <div class="wrap">
 <h2>The receipts</h2>
-<p class="sub">Every number on this site links to a primary source and a year. Nothing goes live unverified, and a public corrections log will show when we fix an error.</p>
+<p class="sub">Every number on this page names its source, its year and what it measures, right where it appears. Our 2040 is a goal and we label it one. Find an error and we fix it in public.</p>
 <div class="stats">
-<div class="stat"><div class="stat-n">70.9%</div><p>Fall in the time price of 50 basic commodities from 1980 to 2025. Measured in hours of work, the world is far more abundant than it was.</p><cite>Simon Abundance Index 2026, Human Progress</cite></div>
-<div class="stat"><div class="stat-n">99.9%</div><p>Fall in the price of a solar module, from $132.38 per watt in 1975 to $0.12 in 2025, in constant dollars.</p><cite>Our World in Data, 2025</cite></div>
-<div class="stat"><div class="stat-n">42%</div><p>Fewer hours worked per year by the average American worker: 3,096 in 1870, 1,789 in 2023. Productivity bought the time.</p><cite>Our World in Data, 2025</cite></div>
-<div class="stat"><div class="stat-n">38% to 8.5%</div><p>Share of humanity in extreme poverty, 1990 to 2019. About 2 billion people to about 700 million.</p><cite>World Bank</cite></div>
-<div class="stat"><div class="stat-n">32 to 71</div><p>Global life expectancy in years, 1900 to 2021.</p><cite>Our World in Data</cite></div>
-<div class="stat"><div class="stat-n">1 in 2 to 1 in 23</div><p>Children who died before age 15: about half for most of history, about 4.3 percent in 2020.</p><cite>Our World in Data</cite></div>
+<div class="stat"><div class="stat-n">70.9%</div><p>Fall in the time price of 50 basic commodities from 1980 to 2025. Measured in hours of work, the world is far more abundant than it was.</p><cite><a href="https://humanprogress.org/the-simon-abundance-index-2026/" target="_blank" rel="noopener">Simon Abundance Index 2026, Human Progress</a></cite></div>
+<div class="stat"><div class="stat-n">99.9%</div><p>Fall in the price of a solar panel, from $132.38 per watt in 1975 to $0.12 in 2025, in constant dollars.</p><cite><a href="https://ourworldindata.org/grapher/solar-pv-prices" target="_blank" rel="noopener">Our World in Data, updated 2026</a></cite></div>
+<div class="stat"><div class="stat-n">3,096 to 1,789</div><p>Hours worked per US worker per year, 1870 to 2023. About 42 percent fewer hours, for a far richer life.</p><cite><a href="https://ourworldindata.org/grapher/annual-working-hours-per-worker" target="_blank" rel="noopener">Our World in Data</a></cite></div>
+<div class="stat"><div class="stat-n">38% to 8.5%</div><p>Share of humanity in extreme poverty, under $2.15 a day, 1990 to 2019. About 2 billion people to about 700 million.</p><cite><a href="https://datatopics.worldbank.org/sdgatlas/archive/2023/goal-1-no-poverty/" target="_blank" rel="noopener">World Bank</a></cite></div>
+<div class="stat"><div class="stat-n">32 to 71</div><p>Global life expectancy in years, 1900 to 2021.</p><cite><a href="https://ourworldindata.org/life-expectancy" target="_blank" rel="noopener">Our World in Data</a></cite></div>
+<div class="stat"><div class="stat-n">1 in 2 to 1 in 23</div><p>Children who died before age 15: about half across most of recorded history, about 4.3 percent in 2020.</p><cite><a href="https://ourworldindata.org/child-mortality" target="_blank" rel="noopener">Our World in Data</a></cite></div>
 </div>
 <div class="rule">
 <p>The pattern in every number: when people are free to enter, compete and sell, prices fall and lives get longer. Where that freedom is blocked, prices rise. The sectors Americans complain about most, hospitals, colleges, childcare and housing, are the most licensed, subsidized and supply-restricted parts of the economy. The complaint is correct. The cure is supply.</p>
-<p>Coming to this page: an interactive chart of what got cheaper and what got pricier since 2000, each pricier sector linked to the rule that blocks supply; and a time price calculator, where you enter your wage and see how many minutes of work a phone, a flight or a pound of chicken costs now versus 1980.</p>
+<p><a href="#sign">Sign the program</a> and the Abundance Brief puts one new receipt in your inbox every week.</p>
 </div>
 </div>
 </section>
-<section id="who-pays">
-<div class="wrap">
-<div class="prose">
-<h2>Who pays?</h2>
-<p class="sub">Less than you pay now, and fewer people need help at all.</p>
-<h3 style="font-size:1.3rem;margin-bottom:.5rem">How does a minimal government fund courts, police and defense?</h3>
-<p>Courts, police and defense are a small slice of what government spends today, and a small slice is easy to fund. A low, broad tax covers it to start. Loser-pays court rules, private arbitration that competes with public courts, and assurance contracts for shared goods carry more of the load over time.</p>
-<h3 style="font-size:1.3rem;margin-bottom:.5rem">What about people who cannot pay?</h3>
-<p>When a home, a clinic visit and a kilowatt hour cost a fraction of what they cost today, far fewer people need help at all. For those who still do, neighbors, charities, mutual aid and fraternal societies carried this load before and will again, with a floor in place while they grow.</p>
-</div>
-</div>
-</section>
+
 <section class="sign" id="sign">
 <div class="wrap">
 <h2>Sign the 2040 Program</h2>
-<p class="sub">Add your name to the program and get the Abundance Brief: one email a week with one price that fell and one rule standing in the way. Then share it with one person who thinks capitalism failed them.</p>
-<form class="form" id="signform">
+<p class="sub">Add your name. Get the Abundance Brief: one email a week with one price that fell and one rule we are tearing down. You will know more about how your world gets cheaper than anyone you work with.</p>
+<form class="form signform" data-form="main" novalidate>
 <label for="name">Your name</label>
 <input id="name" name="name" type="text" autocomplete="name" required>
 <label for="email">Your email</label>
 <input id="email" name="email" type="email" autocomplete="email" required>
 <button class="btn" type="submit">Sign and get the Brief</button>
-<small>One signature, one weekly email, no spam. We publish the signer count once the program launches.</small>
+<small>One signature, one weekly email, no spam, leave any time. The signer count goes public at launch.</small>
 </form>
-<p class="thanks">Signed. The first Brief arrives this week. Now go build something.</p>
+<p class="state" data-state="main" role="status" aria-live="polite"></p>
 </div>
 </section>
+
 <footer>
 <div class="wrap">
-<div class="draft"><strong>Working draft, November 8, 2026.</strong> Name, organization and final call to action are undecided; “The 2040 Program” is a placeholder. Every scenario on this page is illustrative, not a forecast. The signature form is a mockup and does not send anything yet.</div>
+<div class="draft"><strong>Working draft 8, November 8, 2026.</strong> Free Market Abundance publishes the 2040 Program. The 2040 picture on this page is what we are building toward; the numbers are sourced observations, each linked where it appears. Find an error and we will fix it in public. Signatures are being collected; if the form reports that signups are not yet open, nothing was recorded.</div>
 <div class="cols">
 <div>
 <h3>This program</h3>
 <ul>
 <li><a href="#" onclick="window.print();return false;">Print the program</a></li>
 <li><a href="#promise">The promise</a></li>
+<li><a href="#program">The ten points</a></li>
 <li><a href="#who-pays">Who pays?</a></li>
-<li>Corrections log (coming)</li>
+<li><a href="#sign">Sign</a></li>
 </ul>
 </div>
 <div>
 <h3>Sources cited above</h3>
 <ul>
-<li><a href="https://www.cato.org/economic-freedom-world/2025">Economic Freedom of the World 2025</a></li>
-<li><a href="https://efotw.org/sites/default/files/economic-freedom-in-the-literature.pdf">Economic freedom in the literature, Hall and Lawson review</a></li>
+<li><a href="https://www.cato.org/economic-freedom-world/2026">Economic Freedom of the World 2026</a></li>
+<li><a href="https://www.fraserinstitute.org/sites/default/files/2026-10/economic-freedom-of-the-world-2026-newsrelease-intl_0.pdf">Fraser Institute, EFW 2026 news release</a></li>
+<li><a href="https://efotw.org/sites/default/files/economic-freedom-in-the-literature.pdf">Hall and Lawson, economic freedom in the literature</a></li>
 <li><a href="https://www.worldhappiness.report/faq/">World Happiness Report, FAQ</a></li>
 <li><a href="https://humanprogress.org/the-simon-abundance-index-2026/">Simon Abundance Index 2026</a></li>
 <li><a href="https://ourworldindata.org/grapher/solar-pv-prices">OWID, solar module prices</a></li>
-<li><a href="https://ourworldindata.org/grapher/annual-working-hours-per-worker">OWID, annual working hours</a></li>
-<li><a href="https://blogs.worldbank.org/en/opendata/progress-challenges-ending-extreme-poverty">World Bank, extreme poverty</a></li>
+<li><a href="https://ourworldindata.org/grapher/annual-working-hours-per-worker">OWID, annual working hours per worker</a></li>
+<li><a href="https://datatopics.worldbank.org/sdgatlas/archive/2023/goal-1-no-poverty/">World Bank, extreme poverty 1990 to 2019</a></li>
 <li><a href="https://ourworldindata.org/life-expectancy">OWID, life expectancy</a></li>
 <li><a href="https://ourworldindata.org/child-mortality">OWID, child mortality</a></li>
-<li><a href="https://www.nber.org/papers/w30845">Goolsbee and Syverson, NBER 2023</a></li>
-<li><a href="https://www.texastribune.org/2025/01/22/austin-texas-rents-falling">Texas Tribune, Austin rents, 2025</a></li>
-<li><a href="https://www.aeaweb.org/articles?id=10.1257/aer.20181289">Diamond, McQuade and Qian, AER 2019</a></li>
+<li><a href="https://alpha.school/faq/">Alpha School FAQ</a></li>
 </ul>
 </div>
 <div>
 <h3>&nbsp;</h3>
 <ul>
+<li><a href="https://www.texastribune.org/2025/01/22/austin-texas-rents-falling">Texas Tribune, Austin rents, 2025</a></li>
+<li><a href="https://www.aeaweb.org/articles?id=10.1257/aer.20181289">Diamond, McQuade and Qian, AER 2019</a></li>
+<li><a href="https://www.nber.org/papers/w30845">Goolsbee and Syverson, NBER 2023</a></li>
 <li><a href="https://www.cms.gov/data-research/statistics-trends-and-reports/national-health-expenditure-data/nhe-fact-sheet">CMS, national health expenditure</a></li>
 <li><a href="https://surgerycenterok.com/surgery-prices/">Surgery Center of Oklahoma, prices</a></li>
-<li><a href="https://www.fraserinstitute.org/studies/waiting-your-turn-wait-times-for-health-care-in-canada-2025">Fraser Institute, Waiting Your Turn 2025</a></li>
 <li><a href="https://emp.lbl.gov/queues">LBNL, Queued Up 2026</a></li>
 <li><a href="https://nepa.gov/sites/default/files/documents/CEQ_EIS_Timeline_Report_2025-1-13.pdf">CEQ, EIS timelines, 2025</a></li>
 <li><a href="https://www.eia.gov/todayinenergy/detail.php?id=61963">EIA, Vogtle, 2024</a></li>
@@ -627,7 +781,13 @@ a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em}
 </div>
 </div>
 </footer>
+
 <script>
+(function(){
+var nav=document.getElementById('nav'),btn=document.getElementById('menubtn');
+btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o?'true':'false');btn.textContent=o?'Close':'Menu';});
+nav.querySelectorAll('ul a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.textContent='Menu';});});
+
 function openPoint(){
 var id=location.hash.slice(1); if(!id) return;
 var el=document.getElementById(id);
@@ -639,10 +799,30 @@ var a=e.target.closest&&e.target.closest('a[href^="#pt-"]');
 if(a){var el=document.getElementById(a.getAttribute('href').slice(1)); var d=el&&el.querySelector('details'); if(d) d.open=true;}
 });
 openPoint();
-document.getElementById('signform').addEventListener('submit',function(e){
+
+/* Signature forms. POST to /api/sign. If the endpoint is not live yet, say so honestly: nothing is recorded. */
+var MSG_OK='Signed. Welcome to the program. The first Abundance Brief lands in your inbox this week. Now go tell one person.';
+var MSG_PENDING='Signatures are not open yet. Nothing was recorded. Check back soon; we are days away.';
+var MSG_INVALID='Enter a valid email address.';
+function setState(key,text,pending){
+var el=document.querySelector('.state[data-state="'+key+'"]'); if(!el) return;
+el.textContent=text; el.className='state show'+(pending?' pending':'');
+}
+document.querySelectorAll('form.signform').forEach(function(f){
+f.addEventListener('submit',function(e){
 e.preventDefault();
-document.getElementById('sign').classList.add('done');
+var key=f.getAttribute('data-form');
+var email=(f.querySelector('input[name=email]')||{}).value||'';
+var name=(f.querySelector('input[name=name]')||{}).value||'';
+if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){setState(key,MSG_INVALID,true);return;}
+var b=f.querySelector('button'); var old=b.textContent; b.disabled=true; b.textContent='Signing…';
+fetch('/api/sign',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,name:name,source:key,page:location.pathname})})
+.then(function(r){ if(r.ok){ f.style.display='none'; setState(key,MSG_OK,false); } else { setState(key,MSG_PENDING,true); } })
+.catch(function(){ setState(key,MSG_PENDING,true); })
+.then(function(){ b.disabled=false; b.textContent=old; });
 });
+});
+})();
 </script>
 </body>
 </html>
