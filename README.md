@@ -7,7 +7,7 @@ wrangler.jsonc       Cloudflare config: serve public/ as static assets, run src/
 src/worker.js        POST /api/sign stores signatures in KV (binding SIGNUPS); GET /api/count
 package.json         wrangler dev dependency only
 public/
-  index.html         The 2040 Program page (working draft 8, Nov 8 2026)
+  index.html         The Free Market Abundance page (working draft 9, Nov 8 2026)
   404.html           Not-found page
   _headers           Security headers (Cloudflare static assets read this file)
   robots.txt
