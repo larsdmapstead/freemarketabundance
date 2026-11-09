@@ -7,7 +7,8 @@ wrangler.jsonc       Cloudflare config: serve public/ as static assets, run src/
 src/worker.js        POST /api/sign stores signatures in KV (binding SIGNUPS); GET /api/count
 package.json         wrangler dev dependency only
 public/
-  index.html         The Free Market Abundance page (working draft 10, Nov 8 2026)
+  index.html         The Free Market Abundance page (working draft 14, Nov 8 2026)
+  media/             Self-hosted video (i-pencil.mp4, .jpg poster, .vtt captions); slot is hidden until the files exist
   privacy.html       Privacy page (linked from both signup forms and the footer)
   404.html           Not-found page
   _headers           Security headers (Cloudflare static assets read this file)
